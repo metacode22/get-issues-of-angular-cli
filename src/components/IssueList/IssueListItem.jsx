@@ -8,29 +8,50 @@ const IssueListItem = ({
 		created_at: createdAt,
 		comments,
 	},
+	onClick,
 }) => {
 	return (
-		<Wrap>
-			<div>
+		<>
+			<Wrap
+				onClick={() => {
+					onClick(number);
+				}}
+			>
 				<div>
-					<span># {number}</span>
-					<span>{title}</span>
+					<div>
+						<span># {number}</span>
+						<span>{title}</span>
+					</div>
+					<div>
+						<span>작성자: {name}</span>
+						<span>작성일: {createdAt}</span>
+					</div>
 				</div>
-				<div>
-					<span>작성자: {name}</span>
-					<span>작성일: {createdAt}</span>
-				</div>
-			</div>
-			<div></div>
-		</Wrap>
+				<WrapComments>
+					<span>코멘트: {comments}</span>
+				</WrapComments>
+			</Wrap>
+			<hr />
+		</>
 	);
 };
 
 export default IssueListItem;
 
 const Wrap = styled.div`
-  width: 768px;
+	border-radius: 8px;
+	padding: 1rem;
+	cursor: pointer;
 
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
+
+	&:hover {
+		background-color: #e2e5e6;
+	}
+`;
+
+const WrapComments = styled.div`
+	margin: 1rem;
 `;

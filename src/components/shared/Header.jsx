@@ -1,8 +1,15 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Header = () => {
+	const navigate = useNavigate();
+
 	return (
-		<Wrap>
+		<Wrap
+			onClick={() => {
+				navigate('/');
+			}}
+		>
 			<h1>Angular / Angular-cli</h1>
 		</Wrap>
 	);
@@ -12,7 +19,7 @@ export default Header;
 
 const Wrap = styled.div`
 	cursor: pointer;
-  
-  display: flex;
-  justify-content: center
+
+	display: flex;
+	justify-content: center;
 `;

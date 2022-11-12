@@ -7,8 +7,8 @@ const Layout = () => {
 		<Wrap>
 			<Header />
 			<OutletWrap>
-        <Outlet />
-      </OutletWrap>
+				<Outlet />
+			</OutletWrap>
 		</Wrap>
 	);
 };
@@ -16,16 +16,25 @@ const Layout = () => {
 export default Layout;
 
 const Wrap = styled.div`
-  width: 100vw;
-  height: 100vh;
-  
-  display: flex;
-  flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+  align-items: center;
 `;
 
 const OutletWrap = styled.div`
-  width: 100%;
+	width: 1200px;
+
+	display: flex;
+	justify-content: center;
+
+	@media all and (max-width: 1024px) {
+    width: 768px;
+  };
   
-  display: flex;
-  justify-content: center
-`
+  @media all and (max-width: 768px) {
+    width: 480px;
+  };
+`;
