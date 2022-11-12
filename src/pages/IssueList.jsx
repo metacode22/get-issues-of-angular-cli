@@ -4,8 +4,10 @@ import styled from 'styled-components';
 import IssueListItem from '../components/IssueList/IssueListItem';
 import { useNavigate } from 'react-router-dom';
 import useIntersection from '../hooks/useIntersection';
+import Advertisement from '../components/shared/Advertisement';
 
 const DEFAULT_SORT_TYPE = 'comments';
+const ADVERTISEMENT_ORDER = 5;
 
 const IssueList = () => {
   const navigate = useNavigate();
@@ -47,13 +49,18 @@ const IssueList = () => {
 
   return (
     <Wrap>
-      {issueList.map(issue => (
-        <IssueListItem
-          key={issue.id}
-          issue={issue}
-          onClick={handleClickIssueListItem}
-        />
-      ))}
+      {issueList.map((issue, index) => {
+        return (
+          <>
+            {index + 1 === ADVERTISEMENT_ORDER && <Advertisement />}
+            <IssueListItem
+              key={issue.id}
+              issue={issue}
+              onClick={handleClickIssueListItem}
+            />
+          </>
+        );
+      })}
       <div ref={setObserveElement}></div>
     </Wrap>
   );
