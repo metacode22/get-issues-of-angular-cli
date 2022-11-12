@@ -25,9 +25,10 @@ const IssueDetail = () => {
 				<Avatar url={issueDetail?.user?.avatar_url} />
 				<div>
 					<div>
-						<span># {issueDetail?.number}</span>
+						<span># {issueDetail?.number} </span>
 						<span>{issueDetail.title}</span>
 					</div>
+          <br />
 					<div>
 						<span>작성자: {issueDetail?.user?.login}</span>
 						<span>작성일: {issueDetail?.created_at}</span>

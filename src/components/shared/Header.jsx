@@ -18,6 +18,7 @@ const Header = () => {
 export default Header;
 
 const Wrap = styled.div`
+	margin: 1rem;
 	cursor: pointer;
 
 	display: flex;

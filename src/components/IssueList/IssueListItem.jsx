@@ -22,6 +22,7 @@ const IssueListItem = ({
 						<span># {number}</span>
 						<span>{title}</span>
 					</div>
+          <br />
 					<div>
 						<span>작성자: {name}</span>
 						<span>작성일: {createdAt}</span>
