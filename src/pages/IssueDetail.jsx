@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import IssueListItem from '../components/IssueList/IssueListItem';
 import { getIssueDetail } from '../utils/api/apis';
 import styled from 'styled-components';
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 
 const IssueDetail = () => {
 	const { issueNumber } = useParams();
@@ -37,19 +37,17 @@ const IssueDetail = () => {
 					<span>코멘트: {issueDetail?.comments}</span>
 				</WrapComments>
 			</WrapUser>
-      {issueDetail?.body}
+			<ReactMarkdown>{issueDetail?.body}</ReactMarkdown>
 		</Wrap>
 	);
 };
 
 export default IssueDetail;
 
-const Wrap = styled.div`
-  
-`
+const Wrap = styled.div``;
 
 const WrapUser = styled.div`
-  border-bottom: 1px solid black;
+	border-bottom: 1px solid black;
 
 	display: flex;
 	align-items: center;

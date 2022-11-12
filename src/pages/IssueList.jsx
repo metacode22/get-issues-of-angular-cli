@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import IssueListItem from '../components/IssueList/IssueListItem';
 import { useNavigate } from 'react-router-dom';
 
-const DEFAULT_ISSUE_STATE = 'open';
 const DEFAULT_SORT_TYPE = 'comments';
 
 const IssueList = () => {
